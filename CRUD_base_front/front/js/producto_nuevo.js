@@ -15,7 +15,7 @@ function guardar() {
 
   let tablaSeleccionada = document.getElementById('tabla').value;
 
-  let url = 'http://127.0.0.1:5000/';
+  let url = 'https://lucii17.pythonanywhere.com/';
   if (tablaSeleccionada === 'aire') {
     url += 'aires';
   } else if (tablaSeleccionada === 'lavarropa') {

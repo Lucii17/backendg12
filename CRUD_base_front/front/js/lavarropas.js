@@ -4,7 +4,7 @@ createApp({
     data(){
         return{
             lavarropas: [],
-            url: 'http://127.0.0.1:5000/lavarropas',
+            url: 'https://lucii17.pythonanywhere.com/lavarropas',
             cargando: true,
             error: false,
         }
