@@ -163,6 +163,92 @@ def update_lavarropa(id):
 
     db.session.commit()
     return lavarropa_schema.jsonify(lavarropa)   
+#Braian
+class Television (db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    nombre = db.Column(db.String(100))
+    marca = db.Column(db.String(100))
+    precio = db.Column(db.Float())
+    stock = db.Column(db.Integer())
+    imagen = db.Column(db.String(400))
+
+    def __init__(self, nombre, marca, precio, stock, imagen):
+        self.nombre = nombre
+        self.marca = marca
+        self.precio = precio
+        self.stock = stock
+        self.imagen = imagen
+
+with app.app_context():
+    db.create_all() # Se crea TODAS la tabla que se definieron
+
+
+# Creo una instancia de Marshmallow
+class TelevisionSchema(ma.Schema):
+    class Meta:
+        fields=('id','nombre', 'marca', 'precio', 'stock', 'imagen')
+
+
+television_schema=TelevisionSchema()            # El objeto television_schema es para traer un producto
+lista_televisiones_schema=TelevisionSchema(many=True)  # El objeto lista_televisiones_schema es para traer multiples registros de producto
+
+
+# Creo los endPoind
+
+# Lista de Televisiones
+@app.route('/television', methods=['GET'])
+def getTelevision():
+    tv = Television.query.all()
+    listaTv = lista_televisiones_schema.dump(tv)
+    return jsonify(listaTv)
+
+# Get por ID 
+@app.route('/television/<id>', methods=['GET'])
+def getByIdTelevision(id):
+    tv = Television.query.get(id)
+    return television_schema.jsonify(tv) # retorna el JSON de una TV recibida
+
+
+# DELETE Borro una TV por ID
+@app.route('/television/<id>', methods=['DELETE'])
+def DeleteByIdTelevision(id):
+    tv = Television.query.get(id)
+    db.session.delete(tv)
+    db.session.commit()  # persiste los datos en la base de datos
+    return television_schema.jsonify(tv)
+
+# POST creo uns TV
+@app.route('/television', methods=['POST'])
+def createTelevision():
+    nombre = request.json['nombre']
+    marca = request.json['marca']
+    precio = request.json['precio']
+    stock = request.json['stock']
+    imagen = request.json['imagen']
+    nueva_tv = Television(nombre, marca, precio, stock, imagen)
+    db.session.add(nueva_tv)
+    db.session.commit()
+    return television_schema.jsonify(nueva_tv)
+    
+# PUT actualiso los campos de la TV 
+@app.route('/television/<id>', methods=['PUT'])
+def updataTelevisionid(id):
+    tv = Television.query.get(id)
+
+    nombre = request.json['nombre']
+    marca = request.json['marca']
+    precio = request.json['precio']
+    stock = request.json['stock']
+    imagen = request.json['imagen']
+
+    tv.nombre = nombre
+    tv.marca = marca
+    tv.precio = precio
+    tv.stock = stock
+    tv.imagen = imagen
+
+    db.session.commit()
+    return television_schema.jsonify(tv)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

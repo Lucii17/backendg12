@@ -34,9 +34,48 @@ function modificar(){
         marca: m,
 
 
+
+
     };
 
-    let url = 'http://127.0.0.1:5000/aires/'+id; 
+    let tablaSeleccionada = document.getElementById('tabla').value;
+  
+
+    let url = 'http://127.0.0.1:5000/';
+    if (tablaSeleccionada === 'aire') {
+        url += 'aires/'+id;
+    }   else if (tablaSeleccionada === 'lavarropa') {
+        url += 'lavarropas/'+id;
+    }
+        else if (tablaSeleccionada === 'television') {
+        url += 'television/'+id;
+    }
+  
+    let options = {
+      body: JSON.stringify(producto),
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json'}
+    };
+  
+    fetch(url, options)
+      .then(function() {
+        alert('Producto agregado exitosamente');
+        if (tablaSeleccionada === 'aire') {
+          window.location.href = './aire.html';
+        }   else if (tablaSeleccionada === 'lavarropa') {
+          window.location.href = './lavarropas.html';
+        }
+            else if (tablaSeleccionada === 'television') {
+            window.location.href = './television.html';
+        }
+      })
+      .catch(error => {
+        alert('Ha ocurrido un error al agregar el producto');
+        console.error(error);
+      });
+  }
+
+    /*let url = 'http://127.0.0.1:5000/aires/'+id; 
     let options = {
         body: JSON.stringify(producto),
         method: 'PUT',
@@ -49,6 +88,7 @@ function modificar(){
 
 
     })
+    
 
     .catch(error => {
         alert('Ha ocurrido un error al agregar el producto');
@@ -57,3 +97,4 @@ function modificar(){
     })
 
 }
+*/

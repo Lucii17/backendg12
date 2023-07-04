@@ -18,7 +18,7 @@ document.getElementById('header').innerHTML = `
           <div class="dropdown-menu" aria-labelledby="dropdownId">
             <a class="dropdown-item" href="aire.html">Aire acondicionados</a>
             <a class="dropdown-item" href="">Heladeras</a>
-            <a class="dropdown-item" href="#">TV y Smart</a>
+            <a class="dropdown-item" href="television.html">TV y Smart</a>
             <a class="dropdown-item" href="lavarropas.html">Lavarropas</a>
           </div>
         </li>

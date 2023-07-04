@@ -14,13 +14,17 @@ function guardar() {
   };
 
   let tablaSeleccionada = document.getElementById('tabla').value;
+  
 
-  let url = 'https://lucii17.pythonanywhere.com/';
+  let url = 'http://127.0.0.1:5000/';
   if (tablaSeleccionada === 'aire') {
     url += 'aires';
   } else if (tablaSeleccionada === 'lavarropa') {
     url += 'lavarropas';
   }
+    else if (tablaSeleccionada === 'television') {
+  url += 'television';
+}
 
   let options = {
     body: JSON.stringify(producto),
@@ -35,6 +39,9 @@ function guardar() {
         window.location.href = './aire.html';
       } else if (tablaSeleccionada === 'lavarropa') {
         window.location.href = './lavarropas.html';
+      }
+      else if (tablaSeleccionada === 'television') {
+        window.location.href = './television.html';
       }
     })
     .catch(error => {
