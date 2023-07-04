@@ -54,7 +54,7 @@
               <td>
                 <img :src="p.imagen " :alt= "p.nombre" width="80" height="80" > </td>
               <td>
-                <a href="producto_nuevo.html" class="btn btn-primary">Editar</a>
+                <a class="btn btn-primary mr-2" :href="'producto_editar.html?id='+p.id+'&nombre='+p.nombre+'&imagen='+p.imagen+'&precio='+p.precio+'&stock='+p.stock +'&marca='+p.marca">Editar</a>
                 <button type="button" class="btn btn-danger" v-on:click="eliminar(p.id)">Eliminar</button>
               </td>
               

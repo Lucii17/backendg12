@@ -5,7 +5,7 @@ document.getElementById('nosotros').innerHTML = `
     <div class="card mb-3" style="max-width: 540px; margin: 5rem;">
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="Image Source" class="img-fluid rounded-start" alt="Card title">
+          <img src="./img/Pablo.png" class="img-fluid rounded-start" alt="Card title">
         </div>
         <div class="col-md-8">
           <div class="card-body">
@@ -21,7 +21,7 @@ document.getElementById('nosotros').innerHTML = `
     <div class="card mb-3" style="max-width: 540px; margin: 5rem;">
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="Image Source" class="img-fluid rounded-start" alt="Card title">
+          <img src="./img/Braian.png" class="img-fluid rounded-start" alt="Card title">
         </div>
         <div class="col-md-8">
           <div class="card-body">
@@ -39,12 +39,12 @@ document.getElementById('nosotros').innerHTML = `
     <div class="card mb-3" style="max-width: 540px; margin: 5rem;">
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="Image Source" class="img-fluid rounded-start" alt="Card title">
+          <img src="./img/Lucia.png" class="img-fluid rounded-start" alt="Card title">
         </div>
         <div class="col-md-8">
           <div class="card-body">
             <h5 class="card-title">Lucía Martín</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text">Profesora de Nivel Primario<br>Analista de Sistemas <br> Estudiante de programación</p>
             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
           </div>
         </div>
@@ -55,7 +55,7 @@ document.getElementById('nosotros').innerHTML = `
     <div class="card mb-3" style="max-width: 540px; margin: 5rem;">
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="Image Source" class="img-fluid rounded-start" alt="Card title">
+          <img src="./img/Enzo.png" class="img-fluid rounded-start" alt="Card title">
         </div>
         <div class="col-md-8">
           <div class="card-body">

@@ -45,7 +45,7 @@ function modificar(){
     fetch(url, options)
     .then(function(){
         alert("Producto agregado exitosamente");
-        window.location.href = './productos.html'
+        window.location.href = './aire.html'
 
 
     })
