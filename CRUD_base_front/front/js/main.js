@@ -2,7 +2,7 @@ document.getElementById('header').innerHTML = `
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
   <div class="container d-flex align-items-center">
     <a class="navbar-brand" href="index.html">
-      <img src="./img/G.png" alt="Logo" width="150" height="150">
+      <img src="./CRUD_base_front/front/img/G.png" alt="Logo" width="150" height="150">
     </a>
     <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
       aria-expanded="false" aria-label="Toggle navigation">
@@ -14,10 +14,10 @@ document.getElementById('header').innerHTML = `
           <a class="nav-link active" href="index.html" aria-current="page" style="font-size: 25px;" >Home <span class="visually-hidden">(current)</span></a>
         </li>  
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="productos.html" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 25px;" >Productos</a>
+          <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 25px;" >Productos</a>
           <div class="dropdown-menu" aria-labelledby="dropdownId">
             <a class="dropdown-item" href="aire.html">Aire acondicionados</a>
-            <a class="dropdown-item" href="">Heladeras</a>
+            <a class="dropdown-item" href="heladera.html">Heladeras</a>
             <a class="dropdown-item" href="television.html">TV y Smart</a>
             <a class="dropdown-item" href="lavarropas.html">Lavarropas</a>
           </div>

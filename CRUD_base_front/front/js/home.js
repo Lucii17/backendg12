@@ -5,7 +5,7 @@ document.getElementById('nosotros').innerHTML = `
     <div class="card mb-3" style="max-width: 540px; margin: 5rem;">
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="./img/Pablo.png" class="img-fluid rounded-start" alt="Card title">
+          <img src="./CRUD_base_front/front/img/Pablo.png" class="img-fluid rounded-start" alt="Card title">
         </div>
         <div class="col-md-8">
           <div class="card-body">
@@ -21,7 +21,7 @@ document.getElementById('nosotros').innerHTML = `
     <div class="card mb-3" style="max-width: 540px; margin: 5rem;">
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="./img/Braian.png" class="img-fluid rounded-start" alt="Card title">
+          <img src="./CRUD_base_front/front/img/Braian.png" class="img-fluid rounded-start" alt="Card title">
         </div>
         <div class="col-md-8">
           <div class="card-body">
@@ -39,7 +39,7 @@ document.getElementById('nosotros').innerHTML = `
     <div class="card mb-3" style="max-width: 540px; margin: 5rem;">
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="./img/Lucia.png" class="img-fluid rounded-start" alt="Card title">
+          <img src="./CRUD_base_front/front/img/Lucia.png" class="img-fluid rounded-start" alt="Card title">
         </div>
         <div class="col-md-8">
           <div class="card-body">
@@ -55,7 +55,7 @@ document.getElementById('nosotros').innerHTML = `
     <div class="card mb-3" style="max-width: 540px; margin: 5rem;">
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="./img/Enzo.png" class="img-fluid rounded-start" alt="Card title">
+          <img src="./CRUD_base_front/front/img/Enzo.png" class="img-fluid rounded-start" alt="Card title">
         </div>
         <div class="col-md-8">
           <div class="card-body">
