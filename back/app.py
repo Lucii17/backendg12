@@ -288,7 +288,7 @@ def getHeladera():
 @app.route('/heladera/<id>', methods=['GET'])
 def getByIdHeladera(id):
     heladera = Heladera.query.get(id)
-    return heladera_schema.jsonify(heladera) #
+    return heladera_schema.jsonify(heladera) 
 
 
 @app.route('/heladera/<id>', methods=['DELETE'])
