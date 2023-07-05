@@ -4,7 +4,7 @@ createApp({
   data() {
     return {
       listTelevisiones: [],
-      url: 'http://127.0.0.1:5000/television',
+      url: 'https://lucii17.pythonanywhere.com/television',
       cargando: true,
       error: false
     };

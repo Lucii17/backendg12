@@ -4,7 +4,7 @@ createApp({
     data(){
         return{
             productos: [],
-            url: 'http://127.0.0.1:5000/aires' ,
+            url: 'https://lucii17.pythonanywhere.com/aires' ,
             cargando: true,
             error: false,
         }
