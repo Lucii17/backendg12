@@ -3,18 +3,19 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
-      lavarropas: [],
-      url: 'http://127.0.0.1:5000/lavarropas',
+      listHeladeras: [],
+      url: 'http://127.0.0.1:5000/heladera',
       cargando: true,
       error: false
     };
   },
+
   methods: {
     fetchApi(url) {
       fetch(url)
         .then(res => res.json())
         .then(data => {
-          this.lavarropas = data;
+          this.listHeladeras = data;
           this.cargando = false;
         })
         .catch(err => {
@@ -22,6 +23,7 @@ createApp({
           this.error = true;
         });
     },
+
     eliminar(id) {
       Swal.fire({
         title: '¿Estás seguro de eliminar este elemento?',
@@ -45,9 +47,10 @@ createApp({
             .catch(err => console.error(err));
         }
       });
+    },
+
+    created() {
+      this.fetchApi(this.url);
     }
-  },
-  created() {
-    this.fetchApi(this.url);
   }
 }).mount('#app');

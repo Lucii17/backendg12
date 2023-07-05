@@ -249,6 +249,86 @@ def updataTelevisionid(id):
 
     db.session.commit()
     return television_schema.jsonify(tv)
+#Enzo
+class Heladera (db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    nombre = db.Column(db.String(100))
+    marca = db.Column(db.String(100))
+    precio = db.Column(db.Float())
+    stock = db.Column(db.Integer())
+    imagen = db.Column(db.String(400))
+
+    def __init__(self, nombre, marca, precio, stock, imagen):
+        self.nombre = nombre
+        self.marca = marca
+        self.precio = precio
+        self.stock = stock
+        self.imagen = imagen
+
+with app.app_context():
+    db.create_all() 
+
+
+class HeladeraSchema(ma.Schema):
+    class Meta:
+        fields=('id','nombre', 'marca', 'precio', 'stock', 'imagen')
+
+
+heladera_schema=HeladeraSchema()            
+lista_heladeras_schema=HeladeraSchema(many=True)  
+
+
+@app.route('/heladera', methods=['GET'])
+def getHeladera():
+    heladera = Heladera.query.all()
+    listaHeladera = lista_heladeras_schema.dump(heladera)
+    return jsonify(listaHeladera)
+
+
+@app.route('/heladera/<id>', methods=['GET'])
+def getByIdHeladera(id):
+    heladera = Heladera.query.get(id)
+    return heladera_schema.jsonify(heladera) #
+
+
+@app.route('/heladera/<id>', methods=['DELETE'])
+def DeleteByIdHeladera(id):
+    heladera = Heladera.query.get(id)
+    db.session.delete(heladera)
+    db.session.commit()  
+    return heladera_schema.jsonify(heladera)
+
+@app.route('/heladera', methods=['POST'])
+def createHeladera():
+    nombre = request.json['nombre']
+    marca = request.json['marca']
+    precio = request.json['precio']
+    stock = request.json['stock']
+    imagen = request.json['imagen']
+    nueva_heladera = Heladera(nombre, marca, precio, stock, imagen)
+    db.session.add(nueva_heladera)
+    db.session.commit()
+    return heladera_schema.jsonify(nueva_heladera)
+    
+@app.route('/heladera/<id>', methods=['PUT'])
+def updataHeladeraid(id):
+    heladera = Heladera.query.get(id)
+
+    nombre = request.json['nombre']
+    marca = request.json['marca']
+    precio = request.json['precio']
+    stock = request.json['stock']
+    imagen = request.json['imagen']
+
+    heladera.nombre = nombre
+    heladera.marca = marca
+    heladera.precio = precio
+    heladera.stock = stock
+    heladera.imagen = imagen
+
+    db.session.commit()
+    return heladera_schema.jsonify(heladera)
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

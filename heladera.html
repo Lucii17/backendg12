@@ -17,9 +17,9 @@
 
   <main>
     <div id="app" class="container">
-      <h1>Televisiones</h1>
+      <h1>Heladeras</h1>
       <section v-if="error">
-        <p>Lo sentimos, no podemos mostrarte los datos solicitados en este momento</p>
+        <p>Ha ocurrido un error.</p>
       </section>
       <section v-else>
         <section v-if="cargando">
@@ -45,7 +45,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="p in listTelevisiones">
+                <tr v-for="p in listHeladeras">
                   <td scope="row">{{p.id}}</td>
                   <td>{{p.nombre}}</td>
                   <td>{{p.marca}}</td>
@@ -79,8 +79,7 @@
   
   <script src="./CRUD_base_front/front/js/main.js"></script>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <script src="./CRUD_base_front/front/js/television.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script src="./CRUD_base_front/front/js/heladera.js"></script>
 </body>
 
 </html>
