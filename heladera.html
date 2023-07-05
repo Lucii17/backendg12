@@ -33,36 +33,38 @@
             </div>
         </section>
       </section v-else>
-      <section>
+      
           <a class="btn btn-success" href="producto_nuevo.html">Agregar producto</a>
-        </section>
+        
 
-          <div class="table-responsive" style="margin-top: 1rem;">
-            <table class="table table-bordered">
+          <div class="table-responsive">
+            <table class="table table-bordered" style=" margin-top: 1rem;">
               <thead>
                 <tr>
-                  <th scope="col">Id</th>
+                  <th scope="col">ID</th>
                   <th scope="col">Nombre</th>
-                  <th scope="col">Marca</th>
+                  <th scope="col">Imagen</th>
                   <th scope="col">Precio</th>
                   <th scope="col">Stock</th>
-                  <th scope="col">Imagen</th>
+                  <th scope="col">Marca</th>
+                  <th scope="col">Acciones</th>
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="p in listHeladeras">
+                <tr v-for="p in productos">
                   <td scope="row">{{p.id}}</td>
                   <td>{{p.nombre}}</td>
-                  <td>{{p.marca}}</td>
+                  <td>
+                    <img :src="p.imagen " :alt= "p.nombre" width="80" height="80" >
+                  </td>
                   <td>{{p.precio}}</td>
                   <td>{{p.stock}}</td>
+                  <td>{{p.marca}}</td>
                   <td>
-                    <img :src="p.imagen" :alt="p.nombre" width="80" height="80">
+                    <a class="btn btn-primary mr-2" :href="'producto_editar.html?id='+p.id+'&nombre='+p.nombre+'&imagen='+p.imagen+'&precio='+p.precio+'&stock='+p.stock +'&marca='+p.marca">Editar</a>
+                    <button type="button" class="btn btn-danger ml-2" v-on:click="eliminar(p.id)">Eliminar</button>
                   </td>
-                  <td>
-                    <a class="btn btn-primary" :href="'producto_editar.html?id='+p.id+'&nombre='+p.nombre+'&marca='+p.marca+'&precio='+p.precio+'&stock='+p.stock+'&imagen='+p.imagen">Editar</a>
-                    <button type="button" class="btn btn-danger" v-on:click="eliminar(p.id)">Eliminar</button>
-                  </td>
+                  
                 </tr>
               </tbody>
             </table>

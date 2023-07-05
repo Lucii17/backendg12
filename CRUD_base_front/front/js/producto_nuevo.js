@@ -24,6 +24,9 @@ function guardar() {
   }
     else if (tablaSeleccionada === 'television') {
   url += 'television';
+    }
+    else if (tablaSeleccionada === 'heladera') {
+    url += 'heladera';
 }
 
   let options = {
@@ -42,6 +45,9 @@ function guardar() {
       }
       else if (tablaSeleccionada === 'television') {
         window.location.href = './television.html';
+      }
+      else if (tablaSeleccionada === 'heladera') {
+        window.location.href = './heladera.html';
       }
     })
     .catch(error => {

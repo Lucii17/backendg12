@@ -50,6 +50,9 @@ function modificar(){
         else if (tablaSeleccionada === 'television') {
         url += 'television/'+id;
     }
+        else if (tablaSeleccionada === 'heladera') {
+      url += 'heladera/'+id;
+  }
   
     let options = {
       body: JSON.stringify(producto),
@@ -68,6 +71,9 @@ function modificar(){
             else if (tablaSeleccionada === 'television') {
             window.location.href = './television.html';
         }
+            else if (tablaSeleccionada === 'heladera') {
+          window.location.href = './heladera.html';
+      }
       })
       .catch(error => {
         alert('Ha ocurrido un error al agregar el producto');

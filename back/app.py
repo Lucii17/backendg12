@@ -250,7 +250,10 @@ def updataTelevisionid(id):
     db.session.commit()
     return television_schema.jsonify(tv)
 #Enzo
-class Heladera (db.Model):
+
+
+
+class Heladera(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(100))
     marca = db.Column(db.String(100))
@@ -271,18 +274,18 @@ with app.app_context():
 
 class HeladeraSchema(ma.Schema):
     class Meta:
-        fields=('id','nombre', 'marca', 'precio', 'stock', 'imagen')
+        fields = ('id', 'nombre', 'marca', 'precio', 'stock', 'imagen')
 
 
-heladera_schema=HeladeraSchema()            
-lista_heladeras_schema=HeladeraSchema(many=True)  
+heladera_schema = HeladeraSchema()            
+lista_heladeras_schema = HeladeraSchema(many=True)  
 
 
-@app.route('/heladera', methods=['GET'])
-def getHeladera():
-    heladera = Heladera.query.all()
-    listaHeladera = lista_heladeras_schema.dump(heladera)
-    return jsonify(listaHeladera)
+@app.route('/heladeras', methods=['GET'])
+def get_Heladera():
+    heladeras = Heladera.query.all()
+    lista_heladeras = lista_heladeras_schema.dump(heladeras)
+    return jsonify(lista_heladeras)
 
 
 @app.route('/heladera/<id>', methods=['GET'])
@@ -292,7 +295,7 @@ def getByIdHeladera(id):
 
 
 @app.route('/heladera/<id>', methods=['DELETE'])
-def DeleteByIdHeladera(id):
+def delete_Heladera(id):
     heladera = Heladera.query.get(id)
     db.session.delete(heladera)
     db.session.commit()  
@@ -328,6 +331,7 @@ def updataHeladeraid(id):
 
     db.session.commit()
     return heladera_schema.jsonify(heladera)
+
 
 
 if __name__ == '__main__':
